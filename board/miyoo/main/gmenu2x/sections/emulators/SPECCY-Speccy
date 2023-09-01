@@ -1,0 +1,6 @@
+title=Z80
+description=speccy emu
+exec=/mnt/emus/speccy/pocketSpeccy
+selectordir=/mnt/roms/Z80
+selectorscreens=/mnt/roms/Z80/.images
+selectorelement=8

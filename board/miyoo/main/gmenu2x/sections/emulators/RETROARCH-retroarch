@@ -1,0 +1,4 @@
+title=RETROARCH
+description=retroarch emu
+exec=/mnt/emus/retroarch/retroarch
+params=--config /mnt/retroarch/retroarch.cfg --menu

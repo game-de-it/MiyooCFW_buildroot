@@ -1,0 +1,5 @@
+title=GBC
+description=gambatte emu
+exec=/mnt/emus/gambatte/gambatte
+selectordir=/mnt/roms/GBC
+selectorelement=1

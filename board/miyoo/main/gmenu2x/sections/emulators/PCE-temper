@@ -1,0 +1,4 @@
+title=PCE
+description=temper emu
+exec=/mnt/emus/temper/temper
+selectordir=/mnt/roms/PCE

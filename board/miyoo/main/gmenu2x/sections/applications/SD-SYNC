@@ -1,0 +1,4 @@
+title=SD-SYNC
+icon=/mnt/gmenu2x/skins/Default/icons/SD.png
+description=SD card sync
+exec=/mnt/apps/SD-SYNC/SD-SYNC.sh

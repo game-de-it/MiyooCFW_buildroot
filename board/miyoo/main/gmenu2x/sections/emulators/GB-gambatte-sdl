@@ -1,0 +1,5 @@
+title=GB
+description=gambatte_sdl emu
+exec=/mnt/emus/gambatte_sdl/gambatte_sdl
+selectordir=/mnt/roms/GB
+

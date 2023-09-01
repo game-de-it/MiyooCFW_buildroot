@@ -1,0 +1,4 @@
+title=GBA
+description=gpsp_rumble emu
+exec=/mnt/emus/gpsp_rumble/gpsp_rumble.elf
+selectordir=/mnt/roms/GBA

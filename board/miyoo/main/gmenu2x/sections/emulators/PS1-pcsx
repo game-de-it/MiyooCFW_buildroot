@@ -1,0 +1,5 @@
+title=PS1
+description=pcsx_rearmed emu
+exec=/mnt/emus/pcsx_rearmed/pcsx
+params=-cdfile $1
+selectordir=/mnt/roms/PS1

@@ -1,0 +1,6 @@
+title=PCE
+icon=/mnt/gmenu2x/skins/Default/icons/PCE.PNG
+description=mednafen_pce_fast_libretro.so
+exec=/mnt/emus/retroarch/retroarch
+params=--config /mnt/retroarch/retroarch.cfg --libretro /mnt/retroarch/cores/mednafen_pce_fast_libretro.so
+selectordir=/mnt/roms/PCE

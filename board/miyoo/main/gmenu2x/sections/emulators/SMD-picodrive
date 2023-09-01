@@ -1,0 +1,4 @@
+title=SMD
+description=picodrive emu
+exec=/mnt/emus/picodrive/PicoDrive
+selectordir=/mnt/roms/SMD

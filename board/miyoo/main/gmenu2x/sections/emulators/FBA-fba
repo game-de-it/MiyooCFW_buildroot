@@ -1,0 +1,5 @@
+title=FBA
+description=fba-a320 emu
+exec=/mnt/emus/fba-a320/fba
+selectordir=/mnt/roms/FBA
+selectoraliases=/mnt/emus/fba-a320/aliases.txt

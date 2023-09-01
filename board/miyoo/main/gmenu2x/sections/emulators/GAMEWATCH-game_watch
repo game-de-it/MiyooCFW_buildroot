@@ -1,0 +1,5 @@
+title=GW
+description=game$watch emu
+exec=/mnt/emus/game&watch/lr
+selectordir=/mnt/roms/GW
+selectorelement=38

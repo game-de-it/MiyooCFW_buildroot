@@ -1,0 +1,4 @@
+title=SMS
+description=smsplusgx emu
+exec=/mnt/emus/smsplusgx/smsplusgx
+selectordir=/mnt/roms/SMS

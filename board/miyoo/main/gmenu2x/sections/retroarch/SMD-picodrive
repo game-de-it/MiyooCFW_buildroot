@@ -1,0 +1,6 @@
+title=SMD
+icon=/mnt/gmenu2x/skins/Default/icons/picodrive.png
+description=picodrive_libretro.so
+exec=/mnt/emus/retroarch/retroarch
+params=--config /mnt/retroarch/retroarch.cfg --libretro /mnt/retroarch/cores/picodrive_libretro.so
+selectordir=/mnt/roms/SMD

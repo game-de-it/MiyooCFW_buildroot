@@ -1,0 +1,5 @@
+title=NGP
+description=ngpcemu emu
+exec=/mnt/emus/ngpcemu/ngpcemu
+selectordir=/mnt/roms/NGP
+selectorelement=1

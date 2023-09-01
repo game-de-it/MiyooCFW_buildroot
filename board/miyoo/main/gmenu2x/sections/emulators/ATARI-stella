@@ -1,0 +1,5 @@
+title=ATARI
+description=Stella emu
+exec=/mnt/emus/stella/stella
+selectordir=/mnt/roms/ATARI
+

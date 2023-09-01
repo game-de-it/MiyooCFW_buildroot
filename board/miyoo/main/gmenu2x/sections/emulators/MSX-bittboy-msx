@@ -1,0 +1,5 @@
+title=MSX
+description=bittboy-msx emu
+exec=/mnt/emus/bittboy-msx/bittboy-msx
+selectordir=/mnt/roms/MSX
+selectorelement=3

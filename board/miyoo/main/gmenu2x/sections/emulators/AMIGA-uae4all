@@ -1,0 +1,4 @@
+title=AMIGA
+description=uae4all emu
+exec=/mnt/emus/uae4all/uae4all
+selectordir=/mnt/roms/AMIGA

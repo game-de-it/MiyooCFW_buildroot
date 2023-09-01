@@ -1,0 +1,5 @@
+title=COLECOVISION
+description=Coleco Emulator
+exec=/mnt/emus/smsplusgx_gg/coleco
+selectordir=/mnt/roms/COLECOVISION
+selectorfilter=col

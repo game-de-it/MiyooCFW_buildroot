@@ -1,0 +1,5 @@
+title=NEOGEO
+description=gngeo emu
+exec=/mnt/emus/gngeo/gngeo
+selectordir=/mnt/roms/NEOGEO
+selectoraliases=/mnt/emus/gngeo/aliases.txt

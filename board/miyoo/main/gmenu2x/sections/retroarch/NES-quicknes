@@ -1,0 +1,6 @@
+title=NES
+icon=/mnt/gmenu2x/skins/Default/icons/fc.png
+description=quicknes_libretro.so
+exec=/mnt/emus/retroarch/retroarch
+params=--config /mnt/retroarch/retroarch.cfg --libretro /mnt/retroarch/cores/quicknes_libretro.so
+selectordir=/mnt/roms/NES

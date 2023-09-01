@@ -1,0 +1,6 @@
+title=POKEMINI
+icon=/mnt/gmenu2x/skins/Default/icons/POKEMINI.PNG
+description=pokemini_libretro.so
+exec=/mnt/emus/retroarch/retroarch
+params=--config /mnt/retroarch/retroarch.cfg --libretro /mnt/retroarch/cores/pokemini_libretro.so
+selectordir=/mnt/roms/POKEMINI

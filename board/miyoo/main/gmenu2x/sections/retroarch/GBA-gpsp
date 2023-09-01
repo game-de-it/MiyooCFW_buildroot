@@ -1,0 +1,6 @@
+title=GBA
+icon=/mnt/gmenu2x/skins/Default/icons/gpsp_rumble.png
+description=gpsp_libretro.so
+exec=/mnt/emus/retroarch/retroarch
+params=--config /mnt/retroarch/retroarch.cfg --libretro /mnt/retroarch/cores/gpsp_libretro.so
+selectordir=/mnt/roms/GBA

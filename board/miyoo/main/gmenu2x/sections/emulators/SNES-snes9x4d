@@ -1,0 +1,4 @@
+title=SNES
+description=snes9x4d emu
+exec=/mnt/emus/snes9x4d/snes9x4d
+selectordir=/mnt/roms/SNES

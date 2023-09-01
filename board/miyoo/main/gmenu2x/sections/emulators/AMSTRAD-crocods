@@ -1,0 +1,5 @@
+title=AMSTRAD
+description=crocods emu
+exec=/mnt/emus/crocods/crocods
+selectordir=/mnt/roms/AMSTRAD
+selectorelement=3

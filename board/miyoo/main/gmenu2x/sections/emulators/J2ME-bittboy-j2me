@@ -1,0 +1,5 @@
+title=J2ME
+description=bittboy-j2me emu
+exec=/mnt/emus/bittboy-j2me/bin/runjar.sh
+selectordir=/mnt/roms/J2ME
+selectorelement=2

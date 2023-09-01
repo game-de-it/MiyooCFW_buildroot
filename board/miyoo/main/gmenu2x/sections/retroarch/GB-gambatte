@@ -1,0 +1,6 @@
+title=GB
+icon=/mnt/gmenu2x/skins/Default/icons/gambatte_sdl.png
+description=gambatte_libretro.so
+exec=/mnt/emus/retroarch/retroarch
+params=--config /mnt/retroarch/retroarch.cfg --libretro /mnt/retroarch/cores/gambatte_libretro.so
+selectordir=/mnt/roms/GB

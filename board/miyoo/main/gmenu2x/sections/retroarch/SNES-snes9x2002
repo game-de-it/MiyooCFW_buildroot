@@ -1,0 +1,6 @@
+title=SNES
+icon=/mnt/gmenu2x/skins/Default/icons/SNES9X4D.PNG
+description=snes9x2002_libretro.so
+exec=/mnt/emus/retroarch/retroarch
+params=--config /mnt/retroarch/retroarch.cfg --libretro /mnt/retroarch/cores/snes9x2002_libretro.so
+selectordir=/mnt/roms/SNES

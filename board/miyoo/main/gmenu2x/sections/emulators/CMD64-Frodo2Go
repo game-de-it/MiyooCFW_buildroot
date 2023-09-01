@@ -1,0 +1,5 @@
+title=CMD64
+description=Frodo2Go emu
+exec=/mnt/emus/Frodo2Go/Frodo
+selectordir=/mnt/roms/CMD64
+selectorelement=17

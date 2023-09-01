@@ -1,0 +1,4 @@
+title=WS
+description= oswan
+exec=/mnt/emus/oswan/oswan.elf
+selectordir=/mnt/roms/WS

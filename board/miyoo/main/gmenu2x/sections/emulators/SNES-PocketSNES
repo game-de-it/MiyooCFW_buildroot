@@ -1,0 +1,4 @@
+title=SNES
+description=PocketSNES emu
+exec=/mnt/emus/PocketSNES/PocketSNES
+selectordir=/mnt/roms/SNES

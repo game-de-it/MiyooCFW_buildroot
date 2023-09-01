@@ -1,0 +1,4 @@
+title=LYNX
+description=handy emu
+exec=/mnt/emus/handy/handy
+selectordir=/mnt/roms/LYNX

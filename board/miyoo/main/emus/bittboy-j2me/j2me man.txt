@@ -1,0 +1,27 @@
+Description:
+ This is a emulator (runtime environment in fact) for Java 2 ME software (J2ME).
+ It is compatibel with Bittboy (and PocketGo)
+
+Keys mapping:
+ A =  (5) FIRE
+ B =  (3)
+ TA = (7) 
+ TB = (1)
+ R  = Force Exit
+ SELECT = SOFTKEY LEFT 
+ START  = SOFTKEY RIGHT 
+
+Notes:
+ - Resolution of games must be 176x220.
+ - Sound support if CFW 1.3.3 or later.
+ - You may have to try several versions of a game to find a compatible version.
+
+Installation:
+ 1. Copy the folder bittboy-j2me/ to emus/
+
+ 2. Copy the file menu/bittboy-j2me to gmenu2x/sections/emulators/
+
+ 3. Create folder the main/roms/j2me
+    (put jar files here)
+
+

@@ -1,0 +1,4 @@
+title=DOSBOX
+description=dosbox emu
+exec=/mnt/emus/dosbox/dosbox
+selectordir=/mnt/roms/DOSBOX

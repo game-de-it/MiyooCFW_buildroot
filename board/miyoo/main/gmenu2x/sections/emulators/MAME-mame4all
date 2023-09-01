@@ -1,0 +1,4 @@
+title=MAME
+description=mame4all emu
+exec=/mnt/emus/mame4all/mame4all.dge
+selectordir=/mnt/roms/MAME

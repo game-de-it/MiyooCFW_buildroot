@@ -1,0 +1,4 @@
+title=VECTREX
+description=vectrex emu
+exec=/mnt/emus/vectrex/vectrex.elf
+selectordir=/mnt/roms/VECTREX

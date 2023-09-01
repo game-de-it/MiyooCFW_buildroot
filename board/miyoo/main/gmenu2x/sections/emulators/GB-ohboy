@@ -1,0 +1,4 @@
+title=GB
+description=ohboy emu
+exec=/mnt/emus/ohboy/ohboy
+selectordir=/mnt/roms/GB
