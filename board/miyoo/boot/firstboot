@@ -169,7 +169,7 @@ test_image_func(){
 	# "NO" choice for Test_Image msgbox DIALOG_OK exit code
 	## thus we have valid version and simply continue
 	if test $CHOICE -eq 0; then
-		dialog --timeout 300 --msgbox "Colors are correct, proceed with flashing" 0 0
+		dialog --timeout 2 --msgbox "Colors are correct, proceed with flashing" 0 0
 	# "INVERTED" choice for Test_Iamge msgbox DIALOG_CANCEL exit code and -1/255
 	## thus correct "invert" colors parameter on video driver
 	else
@@ -202,7 +202,7 @@ test_video_func(){
 		safe_reboot_func
 	# Error (DIALOG_ERROR) or ESCAPE button pressed (DIALOG_ESCAPE) thus exit code -1/255
 	else
-		dialog --timeout 300 --msgbox "Invalid choice, please redo the test!" 0 0
+		dialog --timeout 2 --msgbox "Invalid choice, please redo the test!" 0 0
 		sleep 1.5
 	fi
 }
@@ -264,7 +264,7 @@ test_keyboard_func(){
 		safe_reboot_func
 	# Error (DIALOG_ERROR) or ESCAPE button pressed (DIALOG_ESCAPE) thus exit code -1/255
 	else
-		dialog --timeout 300 --msgbox "Invalid choice, please redo the test!" 0 0
+		dialog --timeout 2 --msgbox "Invalid choice, please redo the test!" 0 0
 		sleep 1.5
 	fi
 }
@@ -288,13 +288,13 @@ test_flip_func(){
 	if (dialog --stdout --ok-label YES --cancel-label NO --title "Test Flip" --pause "  \n   Flipped? \n\nAre you sure?!" 12 15 300); then
 		# Correct variant for bittboy3.5 (non forced) and display info about flipped image
 		echo "CONSOLE_VARIANT=bittboy3" > ${MOUNTDIR}/console.cfg
-		dialog --timeout 300 --msgbox "Image flipped! correct&reboot" 0 0
+		dialog --timeout 2 --msgbox "Image flipped! correct&reboot" 0 0
 		sleep 1.5
 		#TODO: use special Unicode characters to draw text upside-down e.g.:
 		## dialog --timeout 2 --msgbox "ƃuᴉʇooqǝɹ⅋uᴉʇɔǝɹɹoɔ 'pǝddᴉןɟ ǝƃɐɯᴉ \n\n image flipped, correcting&rebooting" 0 0
 		safe_reboot_func
 	else
-		dialog --timeout 300 --msgbox "Invalid choice, please redo the test!" 0 0
+		dialog --timeout 2 --msgbox "Invalid choice, please redo the test!" 0 0
 		sleep 1.5
 	fi
 }
@@ -309,7 +309,7 @@ fi
 detect_console_func
 if ! $FOUND_CONSOLE && ! $FOUND_CONSOLE_AUTO && $CONSOLE_DETECTED; then
 	if (grep -q "$DETECTED_1" "${MOUNTDIR}/uEnv.txt"); then
-		dialog --timeout 300 --msgbox  "Auto-Detected $DETECTED_1" 0 0
+		dialog --timeout 3 --msgbox  "Auto-Detected $DETECTED_1" 0 0
 		# Test_Video-prompt if proper miyoo video's version driver was loaded:
 		## Loop Test_Video until correct selection has been performed (CHOICE=0/3)
 		### former CHOICE=1 meant safe_reboot if correct and shouldn't reach to this point
@@ -320,10 +320,10 @@ if ! $FOUND_CONSOLE && ! $FOUND_CONSOLE_AUTO && $CONSOLE_DETECTED; then
 			fi
 		done
 	elif (grep -q "$DETECTED_2" "${MOUNTDIR}/uEnv.txt"); then
-		dialog --timeout 300 --msgbox  "Auto-Detected $DETECTED_2" 0 0
+		dialog --timeout 3 --msgbox  "Auto-Detected $DETECTED_2" 0 0
 		echo "CONSOLE_VARIANT=m3" > ${MOUNTDIR}/console.cfg
 	elif (grep -q "$DETECTED_3" "${MOUNTDIR}/uEnv.txt"); then
-		dialog --timeout 300 --msgbox  "Auto-Detected $DETECTED_3" 0 0
+		dialog --timeout 3 --msgbox  "Auto-Detected $DETECTED_3" 0 0
 		echo "CONSOLE_VARIANT=m3_r61520" > ${MOUNTDIR}/console.cfg
 		# Test_Image-prompt if proper "invert" colors parameter was loaded:
 		INVERSION=0 #applied only if colors are inverted 
@@ -332,19 +332,19 @@ if ! $FOUND_CONSOLE && ! $FOUND_CONSOLE_AUTO && $CONSOLE_DETECTED; then
 	## DETECTED_4 - bittboy
 	## DETECTED_5 - bittboy3/2
 	elif (grep -q "$DETECTED_6" "${MOUNTDIR}/uEnv.txt"); then
-		dialog --timeout 300 --msgbox  "Auto-Detected $DETECTED_6" 0 0
+		dialog --timeout 3 --msgbox  "Auto-Detected $DETECTED_6" 0 0
 		echo "CONSOLE_VARIANT=m3_rm68090" > ${MOUNTDIR}/console.cfg
 	elif (grep -q "$DETECTED_7" "${MOUNTDIR}/uEnv.txt"); then
-		dialog --timeout 300 --msgbox  "Auto-Detected $DETECTED_7" 0 0
+		dialog --timeout 3 --msgbox  "Auto-Detected $DETECTED_7" 0 0
 		#echo "CONSOLE_VARIANT=r61520" > ${MOUNTDIR}/console.cfg
 	elif (grep -q "$DETECTED_8" "${MOUNTDIR}/uEnv.txt"); then
-		dialog --timeout 300 --msgbox  "Auto-Detected $DETECTED_8" 0 0
+		dialog --timeout 3 --msgbox  "Auto-Detected $DETECTED_8" 0 0
 		#echo "CONSOLE_VARIANT=r61505w" > ${MOUNTDIR}/console.cfg
 	elif (grep -q "$DETECTED_9" "${MOUNTDIR}/uEnv.txt"); then
-		dialog --timeout 300 --msgbox  "Auto-Detected $DETECTED_9" 0 0
+		dialog --timeout 3 --msgbox  "Auto-Detected $DETECTED_9" 0 0
 		echo "CONSOLE_VARIANT=m3_hx8347d" > ${MOUNTDIR}/console.cfg
 	elif (grep -q "$DETECTED_10" "${MOUNTDIR}/uEnv.txt"); then
-		dialog --timeout 300 --msgbox  "Auto-Detected $DETECTED_10" 0 0
+		dialog --timeout 3 --msgbox  "Auto-Detected $DETECTED_10" 0 0
 		#echo "CONSOLE_VARIANT=unknown-error" > ${MOUNTDIR}/console.cfg
 	fi
 	# Overwrite CONSOLE_VARIANT from new entry
@@ -360,7 +360,7 @@ detect_console_func
 if ! $FOUND_CONSOLE && $FOUND_CONSOLE_AUTO && $CONSOLE_DETECTED; then
 	# show selection menu for ST7789S devices
 	if (test "$CONSOLE_VARIANT" == "st7789s" && grep -q "$DETECTED_1" "${MOUNTDIR}/uEnv.txt"); then
-		dialog --clear --timeout 300 --title "Select your device:" --menu " " 15 40 5 \
+		dialog --clear --timeout 60 --title "Select your device:" --menu " " 15 40 5 \
 		1 "Powkiddy Q20" \
 		2 "Powkiddy Q90" \
 		3 "Powkiddy V90" \
@@ -389,16 +389,16 @@ if ! $FOUND_CONSOLE && $FOUND_CONSOLE_AUTO && $CONSOLE_DETECTED; then
 				echo "CONSOLE_VARIANT=pocketgo_TE" > ${MOUNTDIR}/console.cfg
 				;;
 			*)
-				dialog --timeout 300 --msgbox "Invalid choice. Exiting and selecting default device from autodetection." 0 0
+				dialog --timeout 4 --msgbox "Invalid choice. Exiting and selecting default device from autodetection." 0 0
 				default_console_func
 				sleep 0.1
 				;;
 		esac
 	elif (((test "$CONSOLE_VARIANT" == "bittboy2" || test "$CONSOLE_VARIANT" == "bittboy3") && grep -q "$DETECTED_5" "${MOUNTDIR}/uEnv.txt") || ((test "$CONSOLE_VARIANT" == "xyc" || test "$CONSOLE_VARIANT" == "m3") && grep -q "$DETECTED_2" "${MOUNTDIR}/uEnv.txt")); then
 		if (grep -q "$DETECTED_5" "${MOUNTDIR}/uEnv.txt"); then
-		dialog --timeout 300 --msgbox  "Auto-Detected $DETECTED_5" 0 0
+		dialog --timeout 3 --msgbox  "Auto-Detected $DETECTED_5" 0 0
 		elif (grep -q "$DETECTED_2" "${MOUNTDIR}/uEnv.txt"); then
-		dialog --timeout 300 --msgbox  "Correcting $DETECTED_2 - wait for further instructions" 0 0
+		dialog --timeout 4 --msgbox  "Correcting $DETECTED_2 - wait for further instructions" 0 0
 		fi
 		# Test_Keyboard-prompt if proper miyoo.kbd  version was loaded:
 		## Loop Test_Keyboard until correct selection has been performed (CHOICE=0/1)
@@ -409,7 +409,7 @@ if ! $FOUND_CONSOLE && $FOUND_CONSOLE_AUTO && $CONSOLE_DETECTED; then
 			fi
 		done
 	elif (test "$CONSOLE_VARIANT" == "bittboy" && grep -q "$DETECTED_4" "${MOUNTDIR}/uEnv.txt") ; then
-		dialog --timeout 300 --msgbox  "Auto-Detected $DETECTED_4" 0 0
+		dialog --timeout 3 --msgbox  "Auto-Detected $DETECTED_4" 0 0
 		# Test_Video'2-prompt if proper miyoo video's version driver was loaded:
 		test_video2_func
 	fi
@@ -423,64 +423,64 @@ if $FOUND_CONSOLE; then
 	# Info_Box about selected/edited device in console.cfg
 	case $CONSOLE_VARIANT in
 		bittboy2x_v1)
-				dialog --colors --timeout 300 --ok-label " Your device " --msgbox " BittBoy2x v1" 5 18
+				dialog --colors --timeout 2 --ok-label " Your device " --msgbox " BittBoy2x v1" 5 18
 				BITTBOY_CONFIG=true
 				;;
 		bittboy2x_v2)
-				dialog --colors --timeout 300 --ok-label " Your device " --msgbox " BittBoy2x v2" 5 18
+				dialog --colors --timeout 2 --ok-label " Your device " --msgbox " BittBoy2x v2" 5 18
 				BITTBOY_CONFIG=true
 				;;
 		bittboy3.5)
-				dialog --colors --timeout 300 --ok-label " Your device " --msgbox " BittBoy3.5" 5 18
+				dialog --colors --timeout 2 --ok-label " Your device " --msgbox " BittBoy3.5" 5 18
 				BITTBOY_CONFIG=true
 				;;
 		q20)
-				dialog --colors --timeout 300 --ok-label " Your device " --msgbox " Powkiddy Q20" 5 18
+				dialog --colors --timeout 2 --ok-label " Your device " --msgbox " Powkiddy Q20" 5 18
 				MIYOO_CONFIG=true
 				;;
 		q90)
-				dialog --colors --timeout 300 --ok-label " Your device " --msgbox " Powkiddy Q90" 5 18
+				dialog --colors --timeout 2 --ok-label " Your device " --msgbox " Powkiddy Q90" 5 18
 				MIYOO_CONFIG=true
 				;;
 		v90)
-				dialog --colors --timeout 300 --ok-label " Your device " --msgbox " Powkiddy V90" 5 18
+				dialog --colors --timeout 2 --ok-label " Your device " --msgbox " Powkiddy V90" 5 18
 				MIYOO_CONFIG=true
 				;;
 		pocketgo)
-				dialog --colors --timeout 300 --ok-label " Your device " --msgbox " PocketGo" 5 18
+				dialog --colors --timeout 2 --ok-label " Your device " --msgbox " PocketGo" 5 18
 				MIYOO_CONFIG=true
 				;;
 		pocketgo_TE)
-				dialog --colors --timeout 300 --ok-label " Your device " --msgbox " PocketGo+TE" 5 18
+				dialog --colors --timeout 2 --ok-label " Your device " --msgbox " PocketGo+TE" 5 18
 				MIYOO_CONFIG=true
 				;;
 		xyc_gc9306)
-				dialog --colors --timeout 300 --ok-label " Your device " --msgbox " XYC Q8" 5 18
+				dialog --colors --timeout 2 --ok-label " Your device " --msgbox " XYC Q8" 5 18
 				MIYOO_CONFIG=true
 				;;
 		m3_r61520)
-				dialog --colors --timeout 300 --ok-label " Your device " --msgbox "         SUP M3\n (controller of r61520fb)" 6 29
+				dialog --colors --timeout 2 --ok-label " Your device " --msgbox "         SUP M3\n (controller of r61520fb)" 6 29
 				MIYOO_CONFIG=true
 				;;
 		m3_rm68090)
-				dialog --colors --timeout 300 --ok-label " Your device " --msgbox "      SUP M3\n(RM68090 controller)" 6 24
+				dialog --colors --timeout 2 --ok-label " Your device " --msgbox "      SUP M3\n(RM68090 controller)" 6 24
 				MIYOO_CONFIG=true
 				;;
 		m3_hx8347d)
-				dialog --colors --timeout 300 --ok-label " Your device " --msgbox "      SUP M3\n(HX8347D controller)" 6 24
+				dialog --colors --timeout 2 --ok-label " Your device " --msgbox "      SUP M3\n(HX8347D controller)" 6 24
 				MIYOO_CONFIG=true
 				;;
 		m3_gc9306)
-				dialog --colors --timeout 300 --ok-label " Your device " --msgbox "      SUP M3\n(GC9306 controller)" 6 24
+				dialog --colors --timeout 2 --ok-label " Your device " --msgbox "      SUP M3\n(GC9306 controller)" 6 24
 				MIYOO_CONFIG=true
 				;;
 		*)
-				dialog --colors --timeout 300 --ok-label " Your device " --msgbox "\Zb\Z1 Unknown-Error\Zn" 5 18
+				dialog --colors --timeout 2 --ok-label " Your device " --msgbox "\Zb\Z1 Unknown-Error\Zn" 5 18
 	esac
 	# Test_Variant-prompt if correct CONSOLE_VARIANT has been written to console.cfg
 	test_variant_func
 else
-	dialog --colors --timeout 300 --ok-label " Your device " --msgbox "\Zb\Z1 Unknown\Zn" 5 18
+	dialog --colors --timeout 2 --ok-label " Your device " --msgbox "\Zb\Z1 Unknown\Zn" 5 18
 	console_unknown_func
 fi
 
@@ -526,7 +526,7 @@ if (dialog --clear --stdout --ok-label YES --cancel-label NO --title "   AUTO-RE
 		--colors --pause "\nYour SD card exceeds max. size for auto-resizing! 
 		\n\nWe could however expand it to 118GB. \n\n           \ZuDo you AGREE?\Zn
 		\n\n\ZbINFO: For microSD >128GB big we\n      recommend to use your PC!\Zn" 0 0 300 || test $? -eq 255); then
-			dialog --clear --colors --timeout 300 --msgbox " FAT resizing \ZuABORTED!\Zn" 5 27
+			dialog --clear --colors --timeout 2 --msgbox " FAT resizing \ZuABORTED!\Zn" 5 27
 			clear
 			RESIZE_ABORT=true
 		else
